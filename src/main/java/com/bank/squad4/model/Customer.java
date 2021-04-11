@@ -17,7 +17,8 @@ import lombok.NoArgsConstructor;
 public class Customer {
 	@Id
 	@Column(name = "customer_id")
-	private Long customerId;
+	@NotEmpty(message = "Customer Name not be empty")
+	private Long customerId = 0l;
 	
 	@Column(name = "customer_name")
 	@NotEmpty(message = "Customer Name not be empty")
